@@ -1,12 +1,11 @@
 import cv2
-import mediapipe as mp
 import math
 import numpy as np
-from PIL import Image, ImageGrab
+from PIL import ImageGrab
 
 
 def capture_screen():
-    pil_img = ImageGrab.grab(bbox = None)
+    pil_img = ImageGrab.grab(bbox=None)
     img = np.array(pil_img)
     print(img.shape)
     return img
@@ -33,7 +32,7 @@ def zoom_in_screenshot(img, x, y, size_x, size_y):
     img_detail = cv2.resize(img_detail, (img.shape[1], img.shape[0]))
     img_boxed = img.copy()
     img_boxed = cv2.rectangle(img_boxed, (y_min, x_min), (y_max, x_max), (0, 0, 255), 10)
-    img_boxed = cv2.circle(img_boxed, (x_finger, y_finger),15, (0, 0, 255), cv2.FILLED)
+    img_boxed = cv2.circle(img_boxed, (x_finger, y_finger), 15, (0, 0, 255), cv2.FILLED)
     a = 4
     w, h = int(img.shape[1]/a), int(img.shape[0]/a)
 
@@ -44,21 +43,13 @@ def zoom_in_screenshot(img, x, y, size_x, size_y):
     print(img_boxed.shape[1])
     print(img.shape[1] - img_boxed.shape[1])
 
-
     print(img_detail[img.shape[0] - img_boxed.shape[0]-1:img.shape[0]-1, img.shape[1] - img_boxed.shape[1]-1:img.shape[1]-1].shape)
     img_detail[img.shape[0] - img_boxed.shape[0] - 1:img.shape[0] - 1, img.shape[1] - img_boxed.shape[1] - 1:img.shape[1] - 1] = img_boxed
 
     cv2.imshow('detail', img_detail)
 
-#    cv2.imshow('screen', img_boxed)
-#    cv2.imshow('boxed', img_boxed)
 
-
-def capture_gesture_detected():
-    pass
-
-
-def lmPositionList(results, img, handNo=0):
+def lm_position_list(results, img, handNo=0):
     lmList = []
     if results.multi_hand_landmarks:
         myHand = results.multi_hand_landmarks[handNo]

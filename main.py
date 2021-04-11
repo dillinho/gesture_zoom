@@ -37,7 +37,7 @@ def run():
             if results.multi_hand_landmarks:
                 #for hand_landmarks in results.multi_hand_landmarks:
                 mp_drawing.draw_landmarks(image, results.multi_hand_landmarks[0], mp_hands.HAND_CONNECTIONS)
-                lmList = lmPositionList(results, image)
+                lmList = lm_position_list(results, image)
                 image = draw_lmList(image, lmList, [4, 8])
 
                 if screen_not_captured:
