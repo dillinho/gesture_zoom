@@ -5,4 +5,7 @@ format_code:
 run_tests:
 	pytest tests
 build:
-	pyinstaller main.py
+	pyinstaller main.spec
+	# try: pyinstaller --add-data "PATH\TO\mediapipe\modules;mediapipe\modules" --onefile -- main.py
+run_exe:
+	dist\main.exe
