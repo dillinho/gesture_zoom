@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['E:\\python experimente\\gesture_zoom'],
+             pathex=[],
              binaries=[],
              datas=[],
              hiddenimports=[],
