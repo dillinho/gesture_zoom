@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['src\\main.py'],
+a = Analysis(['main.py'],
              pathex=[],
              binaries=[],
              datas=[('c:\\hostedtoolcache\\windows\\python\\3.8.10\\x64\\lib\\site-packages\\mediapipe\\modules', 'mediapipe\\modules')],
