@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -35,9 +35,13 @@ jobs:
     #  run: |
     #    pytest
     - name: PyInstaller Windows
-      uses: JackMcKew/pyinstaller-action-windows@main
-      with:
-        path: src
+      run: |
+        pyinstaller --onefile --noconsole main.py
+        # --add-data "PATH\TO\mediapipe\modules;mediapipe\modules"
+
+      #uses: JackMcKew/pyinstaller-action-windows@main
+      #with:
+      #  path: src
 
     - uses: actions/upload-artifact@v2
       with:
