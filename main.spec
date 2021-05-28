@@ -4,9 +4,9 @@ block_cipher = None
 
 
 a = Analysis(['src\\main.py'],
-             pathex=[],
+             pathex=['E:\\python experimente\\gesture_zoom'],
              binaries=[],
-             datas=[('c:\\hostedtoolcache\\windows\\python\\3.8.10\\x64\\lib\\site-packages\\mediapipe\\modules', 'mediapipe\\modules')],
+             datas=[],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
