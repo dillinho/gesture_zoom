@@ -37,7 +37,7 @@ jobs:
     #    pytest
     - name: PyInstaller Windows
       run: |
-        pyinstaller --onefile --noconsole main.py
+        pyinstaller --onefile --noconsole src\main.py
         # --add-data "PATH\TO\mediapipe\modules;mediapipe\modules"
 
       #uses: JackMcKew/pyinstaller-action-windows@main
