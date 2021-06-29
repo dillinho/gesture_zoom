@@ -43,7 +43,7 @@ def zoom_in_screenshot(img, results, mp_hands, mp_drawing, size_x, size_y, windo
         img.shape[0] - img_boxed.shape[0] - 1 : img.shape[0] - 1,
         img.shape[1] - img_boxed.shape[1] - 1 : img.shape[1] - 1,
     ] = img_boxed
-
+    img_detail = cv2.cvtColor(img_detail, cv2.COLOR_BGR2RGB)
     cv2.imshow(window_name, img_detail)
 
 
